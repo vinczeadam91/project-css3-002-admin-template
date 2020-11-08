@@ -2,11 +2,17 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+
+}
+
 .header--dark{
-    width: 100vw;
+    width: 100%;
     background-color: rgb(51, 57, 64);
     color: rgb(236, 236, 236);
-    padding: 20px;
+    padding: 20px 35px;
     position: relative;
     
 }
@@ -20,8 +26,9 @@
 
 .header__menuBtn{
     background-color: rgb(51, 57, 64);
-    color: rgb(153, 152, 152);
     border: 0;
+    color: rgb(153, 152, 152);
+    font-size: 18px;
     margin: 0 .3rem;
     position: relative;
     left: 6rem;
@@ -62,6 +69,7 @@
 
 .header__userBtn i, .header__caretBtn i{
     color: rgb(153, 152, 152);
+    font-size: 18px;
 }
 .search__input{
     border: 1px solid rgb(51, 57, 64);
@@ -80,12 +88,21 @@
     
 }
 
-.main__nav{
+aside{
     background-color: rgb(33, 37, 41);
+    flex: 200px;
+    height: 100%;
+    
+   
+}
+
+main{
     display: flex;
     flex-direction: row;
-    width: 200px;
+    min-width: 160px;
 }
+
+
 
 .main__nav .nav__ul{
     list-style: none;
@@ -111,7 +128,7 @@
 
 .main__nav .nav__ul li i.fa.fa-chevron-right{
     position: absolute;
-    right: -3rem;
+    right: .1em;
 }
 
 .main__nav .nav__ul li i.fa.fa-tachometer{
@@ -124,8 +141,92 @@
     margin: 0 .7em;
 }
 
-.content{
+section{
+    
+    width: 100%;
+    padding: .7em 1em;    
+}
+
+.main__breadcrumb{
+    background-color: rgb(233,236,239);
+    color: rgba(73, 73, 73, 0.7);
+    border: 0;
+    border-radius: .25rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    
+}
+
+.content .main__cards{
     display: flex;
     flex-direction: row;
-    flex: 400px;
+    
+}
+
+.content .main__cards .main__card{
+    box-shadow: 3px 3px 0 3px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    flex-basis:250px;
+    min-width: 150px;
+    max-width: 250px;
+    margin: 1.3em 0 0 1em;
+    
+}
+
+.content .main__cards .main__card .card__top{
+    border-bottom:2px solid  rgba(7, 2, 0, 0.048);
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    padding: 2em 0 1.3em 1.2em;
+    transition: background color .3s 0s;
+}
+
+.content .main__cards .main__card .card__bottom{
+    border: 0;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    font-size: 12px;
+    padding: 1em 0 .6em 0;
+    position: relative;
+    text-indent: 1.5em;
+    transition: background color .3s 0s;
+}
+
+.content .main__cards .main__card .card__bottom i{
+    position: absolute;
+    right: .8rem;
+}
+
+.content .main__cards .main__card.main__card--blue{
+    background-color: rgb(0, 123, 255);
+    
+}
+.content .main__cards .main__card.main__card--yellow{
+    background-color: rgb(255, 193, 7);
+}
+.content .main__cards .main__card.main__card--green{
+    background-color: rgb(40, 167, 69);
+}
+.content .main__cards .main__card.main__card--red{
+    background-color: rgb(220, 53, 69);
+}
+
+@media only screen and (max-width: 700px) {
+    .content .main__cards{
+        flex-direction: column;
+    }
+
+    .content .main__cards .main__card{
+        flex-basis:100px;
+        max-width: 250px;
+        
+    }
+
+    .main__nav .nav__ul li h4, .main__nav .nav__ul li a, .main__nav .nav__ul li a#layouts, .main__nav .nav__ul li i.fa.fa-chevron-right{
+        display: none;
+    }
+
+    .main__nav .nav__ul li i{
+        visibility: visible;
+    }
 }
